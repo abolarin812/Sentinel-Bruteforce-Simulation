@@ -41,6 +41,8 @@ Here’s how the simulation was conducted:
 
 <img width="941" height="489" alt="image" src="https://github.com/user-attachments/assets/1c2e7d25-f6cb-45eb-bd94-b0a7b3da585f" />
 
+Fig 1: Azure VM Configuration
+
 
 3.  Connect VM to Microsoft Sentinel
 
