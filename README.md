@@ -32,6 +32,8 @@ Here’s how the simulation was conducted:
 
 <img width="941" height="365" alt="image" src="https://github.com/user-attachments/assets/44f519e8-28d7-4812-a116-73216b728a7d" />
 
+Fig 1: Azure VM Configuration
+
 
 2.  Set Up Log Analytics and Sentinel
 
@@ -41,7 +43,7 @@ Here’s how the simulation was conducted:
 
 <img width="941" height="489" alt="image" src="https://github.com/user-attachments/assets/1c2e7d25-f6cb-45eb-bd94-b0a7b3da585f" />
 
-Fig 1: Azure VM Configuration
+Fig 2: Log Analytic Workspace Creation.
 
 
 3.  Connect VM to Microsoft Sentinel
@@ -49,6 +51,8 @@ Fig 1: Azure VM Configuration
   -  Configured the Windows Security Events data connector via AMA to send logs from the VM to Sentinel.
 
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/ea895a34-7e96-4bd5-bcbe-a68268387b13" />
+
+Fig 3: Data connector configuration
 
 
 4.  Simulate Brute-Force Attack
@@ -58,6 +62,8 @@ Fig 1: Azure VM Configuration
   - Entered the VM IP and username, then intentionally entered the wrong password 10+ times to simulate a brute-force login      attempt.
 
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/cd6be1d6-1b65-4703-b2d5-468127f58bf5" />
+
+Fig 4: RDP login screen with failed attempt
 
 
 5.  Verify Logs in Sentinel
@@ -69,6 +75,8 @@ Fig 1: Azure VM Configuration
 &nbsp;&nbsp;&nbsp;&nbsp;| where EventID == 4625
 
 <img width="941" height="516" alt="image" src="https://github.com/user-attachments/assets/1e992245-f652-4417-a80b-f4868d750dde" />
+
+Fig 5: KQL query results showing failed logins
 
 
 6.  Create an Analytics Rule to Detect the Attack
@@ -94,7 +102,11 @@ Fig 1: Azure VM Configuration
 
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/e6041b76-df1e-4c67-896a-f73ed633cf55" />
 
+Fig 6: Analytics rule query setup
+
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/a00df7e5-0f07-420c-b6eb-a00948b7fb17" />
+
+Fig 7: Analytics rules
 
 
 7.  Repeat Brute-Force Simulation
@@ -110,10 +122,17 @@ Fig 1: Azure VM Configuration
   -  Review incident details and confirm the detection worked as expected.
 
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/eb78781f-7b1d-4214-85b9-2ab9841e85c3" />
+
+Fig 8: Incident overview
  
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/015ab49c-4b2f-4706-9616-bbfac0370715" />
 
+Fig 9: Incident Log
+
 <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/49a83d5a-7f32-4d56-9453-93d639adb85e" />
+
+Fig 10: Preview of a single incident
+
 
 ## Lessons Learned.
 
